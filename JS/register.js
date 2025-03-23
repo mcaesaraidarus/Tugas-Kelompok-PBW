@@ -50,3 +50,38 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("registerForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Mencegah halaman refresh
+
+        // Ambil nilai input
+        let namaLengkap = document.getElementById("namaLengkap").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let password = document.getElementById("password").value.trim();
+        let confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+        // Validasi sederhana
+        if (namaLengkap === "" || email === "" || password === "" || confirmPassword === "") {
+            alert("Harap isi semua kolom!");
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert("Password dan konfirmasi password harus sama!");
+            return;
+        }
+
+        // Tampilkan pop-up
+        document.getElementById("popup").style.display = "flex";
+
+        // Simpan data ke localStorage (opsional)
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userPassword", password);
+
+        // Redirect ke login setelah 2 detik
+        setTimeout(function () {
+            window.location.href = "login.html";
+        }, 2000);
+    });
+});
