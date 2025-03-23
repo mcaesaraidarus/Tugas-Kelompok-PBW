@@ -105,13 +105,11 @@ a:hover {
     white-space: nowrap;
 }
 
-/* Gaya untuk input yang salah */
 input.error {
     border: 2px solid red;
     background-color: #ffe6e6;
 }
 
-/* Gaya untuk pesan error */
 .error-message {
     color: red;
     font-size: 14px;
