@@ -93,7 +93,7 @@ button:hover {
 .right img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Supaya gambar menyesuaikan ukuran box */
+    object-fit: cover; /* supaya gambar menyesuaikan ukuran box */
 }
 
 .right h2 {
@@ -106,16 +106,16 @@ button:hover {
     background: rgba(0, 0, 0, 0.5);
     padding: 10px 20px; /* Kurangi padding agar lebih pas */
     border-radius: 5px;
-    white-space: nowrap; /* Mencegah teks turun ke bawah */
+    white-space: nowrap; /* biar teks ga turun ke bawah */
 }
 
-/* Gaya untuk input yang salah */
+/* untuk input yang salah */
 input.error {
     border: 2px solid red;
     background-color: #ffe6e6;
 }
 
-/* Gaya untuk pesan error */
+/* untuk pesan error */
 .error-message {
     color: red;
     font-size: 14px;
