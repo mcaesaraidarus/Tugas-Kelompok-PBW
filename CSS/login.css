@@ -64,20 +64,6 @@ button:hover {
     background: #2a37c5;
 }
 
-.social-login {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.social-icons span {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background: gray;
-    margin: 5px;
-    border-radius: 50%;
-}
-
 .welcome-box {
     width: 50%;
     position: relative;
@@ -93,7 +79,7 @@ button:hover {
 .right img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* supaya gambar menyesuaikan ukuran box */
+    object-fit: cover;
 }
 
 .right h2 {
@@ -102,24 +88,87 @@ button:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 20px; /* Kurangi ukuran font jika terlalu besar */
+    font-size: 20px;
     background: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px; /* Kurangi padding agar lebih pas */
+    padding: 10px 20px;
     border-radius: 5px;
-    white-space: nowrap; /* biar teks ga turun ke bawah */
+    white-space: nowrap;
 }
 
-/* untuk input yang salah */
+/* Error input */
 input.error {
     border: 2px solid red;
     background-color: #ffe6e6;
 }
 
-/* untuk pesan error */
+/* Pesan error */
 .error-message {
     color: red;
     font-size: 14px;
     margin-top: -5px;
     margin-bottom: 10px;
     display: none;
+}
+
+/* Toggle Role (User/Admin) */
+.role-toggle {
+    display: flex;
+    width: 160px;
+    height: 35px;
+    margin: 10px auto;
+    border-radius: 18px;
+    background: #d3d3d3;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.role-option {
+    flex: 1;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* Hilangkan garis pemisah */
+.role-toggle label:not(:last-child) {
+    border-right: none;
+}
+
+/* Elemen highlight */
+.role-highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 18px;
+    transition: left 0.3s ease;
+    z-index: 1;
+}
+
+/* Animasi highlight saat memilih role */
+input#admin:checked ~ .role-highlight {
+    left: 50%;
+}
+
+input#user:checked ~ .role-highlight {
+    left: 0;
+}
+
+/* Sembunyikan radio button */
+input[name="role"] {
+    display: none;
+}
+
+/* Pastikan teks berubah warna saat dipilih */
+input[name="role"]:checked + label {
+    color: white;
+    font-weight: bold;
 }
