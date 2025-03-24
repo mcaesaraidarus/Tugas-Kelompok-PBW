@@ -8,15 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
     emailInput.insertAdjacentElement("afterend", emailError);
 
     form.addEventListener("submit", function (event) {
-        let valid = true; // Menentukan apakah form bisa dikirim
+        let valid = true;
 
-        // Reset tampilan error setiap kali tombol login ditekan
+        // Reset error saat submit
         emailInput.classList.remove("error");
         emailError.style.display = "none";
 
         const emailValue = emailInput.value.trim();
 
-        // Cek apakah email diakhiri dengan @gmail.com
+        // Cek email harus @gmail.com
         if (!emailValue.endsWith("@gmail.com")) {
             emailError.textContent = "Email harus menggunakan domain @gmail.com!";
             emailError.style.display = "block";
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             valid = false;
         }
 
-        // Jika ada kesalahan, form tidak akan dikirim
+        // Cegah submit jika ada error
         if (!valid) {
             event.preventDefault();
         }
