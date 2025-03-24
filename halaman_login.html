@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="CSS/login.css">
-    <script src="JS/login.js"></script>
+    <script src="JS/login.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -15,15 +15,27 @@
             <form id="loginForm">
                 <input type="email" id="email" placeholder="Email Address" required>
                 <input type="password" id="password" placeholder="Password" required>
+
+                <!-- Pilihan Peran (User / Admin) -->
+                <div class="role-toggle">
+                    <input type="radio" id="user" name="role" value="user" checked>
+                    <input type="radio" id="admin" name="role" value="admin">
+                    <div class="role-highlight"></div>
+                    <label for="user" class="role-option">User</label>
+                    <label for="admin" class="role-option">Admin</label>
+                </div>
+
                 <div class="options">
                     <label><input type="checkbox"> Keep me logged in</label>
                     <a href="#">Lupa password?</a>
                 </div>
+
                 <button type="submit">Log in</button>
                 <p>Tidak Punya Akun? <a href="register.html">Register</a></p>
                 <div class="social-login"></div>
             </form>
         </div>
+
         <div class="welcome-box">
             <div class="right">
                 <img src="Gambar/900356e7d4b2e96f22eb94afcd014e76.jpg" alt="Background Image">
